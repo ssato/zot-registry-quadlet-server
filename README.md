@@ -1,7 +1,7 @@
 # Info
 
-RPM packaging stuff to install zot container as podman quadlet and provide
-container registry service safely and isolated service.
+Podman Quadlet configs to run zot, oci container image registry service, and
+files for RPM packaging.
 
 - Author: Satoru SATOH <ssato@redhat.com>
 - License: MIT
