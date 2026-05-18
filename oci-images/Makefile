@@ -1,0 +1,19 @@
+OCI_CONTAINER_IMAGE = zot-linux-amd64
+
+OCI_CONTAINER_IMAGE_TAG = latest
+OCI_CONTAINER_IMAGE_URL = ghcr.io/project-zot/$(OCI_CONTAINER_IMAGE):$(OCI_CONTAINER_IMAGE_TAG)
+OCI_CONTAINER_IMAGE_ARCHIVE = $(OCI_CONTAINER_IMAGE).tar
+
+all: $(OCI_CONTAINER_IMAGE_ARCHIVE)
+
+pull.stamp:
+	podman pull $(OCI_CONTAINER_IMAGE_URL)
+	touch $@
+
+$(OCI_CONTAINER_IMAGE_ARCHIVE): pull.stamp
+	podman save -o $@ $(OCI_CONTAINER_IMAGE_URL)
+
+reflesh:
+	touch pull.stamp
+
+.PHONEY: reflesh
