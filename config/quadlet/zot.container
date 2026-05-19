@@ -3,4 +3,5 @@ Image=ghcr.io/project-zot/zot-linux-amd64:latest
 PublishPort=5000:5000
 Volume=/var/lib/zot:/var/lib/zot:Z
 Volume=/etc/zot/config.json:/etc/zot/config.json:Z
+Volume=/etc/zot/cert:/etc/zot/cert:Z
 Exec=serve /etc/zot/config.json
