@@ -26,5 +26,13 @@ install(FILES "config/quadlet/zot.container"
 install(FILES "config/zot/config.json"
         DESTINATION "/etc/zot")
 
+install(FILES "config/cert/Makefile" "config/cert/server.crt" "config/cert/server.key"
+        DESTINATION "/etc/zot/cert")
+
+install(FILES "config/cert/server.crt"
+        DESTINATION "/etc/pki/ca-trust/source/anchors"
+        RENAME "zot-registry.crt"
+        PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ)
+
 install(FILES "oci-images/${IMAGE_TAR}"
         DESTINATION "${IMAGE_DEST_DIR}")
