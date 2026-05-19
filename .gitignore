@@ -1,2 +1,3 @@
 oci-images/*.stamp
 oci-images/*.tar
+config/cert/server.*
