@@ -16,7 +16,7 @@ Requirements:
 
 ### How to build src.tar.gz, src.rpm and binary rpm
 
-0. Pull zot container image
+0. Pull zot container image (option)
 
    `make -C oci-images`
 
