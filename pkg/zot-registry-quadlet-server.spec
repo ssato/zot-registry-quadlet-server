@@ -22,7 +22,7 @@ Requires:       podman
 Requires:       ca-certificates
 %{?systemd_requires}
 
-BuildArch:      noarch
+BuildArch:      x86_64
 
 # BuildRequires:  podman
 BuildRequires:  cmake
