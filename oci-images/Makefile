@@ -13,7 +13,7 @@ pull.stamp:
 $(OCI_CONTAINER_IMAGE_ARCHIVE): pull.stamp
 	podman save -o $@ $(OCI_CONTAINER_IMAGE_URL)
 
-reflesh:
+refresh:
 	touch pull.stamp
 
-.PHONEY: reflesh
+.PHONEY: refresh
